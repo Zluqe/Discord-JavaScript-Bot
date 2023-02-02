@@ -7,9 +7,12 @@ const client = new Discord.Client({
   ws: { intents: Discord.Intents.ALL },
 });
 
+const createdstatus = "959055077946032229";
+const created = client.users.cache.get(createdstatus);
+
 const statuses = [
   "Host with Zluqe",
-  "Created by 5ws",
+  "Created by ${created.username}",
   "Modify me"
 ];
 
