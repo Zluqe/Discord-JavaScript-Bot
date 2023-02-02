@@ -1,6 +1,6 @@
 [![Logo Image](https://us-east-1.tixte.net/uploads/your-parents.wants.solutions/full-logo.png)](https://zluqe.com)
 
-# A Discord Python Bot Template
+# A Discord JavaScript Bot Template
 This template will allow you to start off on a discord python bot, a journey to something great!
 
 Please note that while our template may not currently include all the features you are looking for, we are constantly working to add new functionality and improve the overall experience for our users.
