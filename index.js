@@ -1,6 +1,7 @@
 const {token, prefix} = require("./config.json");
 const Discord = require("discord.js");
 const random = require("lodash");
+const fs = require("fs");
 
 const prefix = prefix;
 
