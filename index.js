@@ -18,26 +18,43 @@ const statuses = [
   "Modify me"
 ];
 
-const commands = fs.readdirSync("./commands").filter((file) => file.endsWith(".js"));
-const events = fs.readdirSync("./events").filter((file) => file.endsWith(".js"));
-const handlers = fs.readdirSync("./handlers").filter((file) => file.endsWith(".js"));
+client.commands = new Discord.Collection();
 
-for (const file of commands) {
-  const command = require(`./commands/${file}`);
-  client.commands.set(command.name, command);
-}
+fs.readdir("./commands", (err, files) => {
+  if (err) console.error(err);
 
-for (const file of events) {
-  const event = require(`./events/${file}`);
-  const eventn = file.split(".")[0];
-  client.on(eventn, event.bind(null, client));
-}
+  console.log(`${files.length} commands was loaded`);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
+    console.log(`${command.name} command was loaded`);
+  });
+});
 
-for (const file of handlerFiles) {
-  const handler = require(`./handlers/${file}`);
-  const handlern = file.split(".")[0];
-  client[handlern] = handler;
-}
+fs.readdir("./events", (err, files) => {
+  if (err) console.error(err);
+
+  console.log(`${files.length} events was loaded`);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    const event = require(`./events/${file}`);
+    client.on(file.split(".")[0], event.bind(null, client));
+    console.log(`${file} event was loaded`);
+  });
+});
+
+fs.readdir("./handlers", (err, files) => {
+  if (err) console.error(err);
+
+  console.log(`${files.length} handlers was loaded`);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    const handler = require(`./handlers/${file}`);
+    handler(client);
+    console.log(`${file} handler was loaded`);
+  });
+});
 
 client.on("ready", () => {
   console.log(`${client.user.tag} is online!`);
