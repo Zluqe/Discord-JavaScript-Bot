@@ -20,7 +20,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setColor('#00ff00')
       .setAuthor(message.client.user.tag, message.client.user.displayAvatarURL())
-      .setDescription(``Contribuitor`` - **cryart#1206**\n``Guilds`` - **${stats.servers}**\n``Channels`` - **${stats.channels}**\n``Users`` - **${stats.users}**\n``Uptime`` - **${stats.uptime}**\n``Node.js version`` - **${stats.node}**\n``Memory usage`` - **${stats.memory} MB**\n``Platform`` - **${stats.platform}**)
+      .setDescription(``Contribuitor`` - **cryart**\n``Guilds`` - **${stats.servers}**\n``Channels`` - **${stats.channels}**\n``Users`` - **${stats.users}**\n``Uptime`` - **${stats.uptime}**\n``Node.js version`` - **${stats.node}**\n``Memory usage`` - **${stats.memory} MB**\n``Platform`` - **${stats.platform}**)
       .setFooter('Powered by Zluqe');
 
     message.channel.send({ embeds: [embed] });
