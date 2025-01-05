@@ -7,6 +7,6 @@ Please note that while our template may not currently include all the features y
 
 In the meantime, you can still customize and deploy a bot with basic functionality, and rest assured that we will be adding new features and capabilities in the future.
 
-We value your feedback and would love to hear about any suggestions or requests you have for our template. Join our [community](https://discord.gg/D8rjRN3uJQ) and stay updated on the latest developments and updates.
+We value your feedback and would love to hear about any suggestions or requests you have for our template. Join our [community](https://zluqe.org/discord) and stay updated on the latest developments and updates.
 
 Let's start building your bot now and see where your imagination takes you!
